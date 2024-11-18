@@ -41,3 +41,29 @@ This guide explains how to set up **Drupal** on **XAMPP** for Windows, move the 
 4. Copy the `data` folder to the new `mysql` folder
 5. If the service crashes in XAMPP, then delete the following files
 ``` ib_logfile0, ib_logfile1, ib_logfile2, ibdata1``` from `C:\xampp\mysql\data`
+
+# Create a Subtheme: Barrio and Bootstrap 5+
+- Let's take a look at how to create a subtheme and leverage bootstrap for custom styles, components, etc.
+1. In the project file open a windows terminal and run: composer require drupal/bootstrap_barrio
+2. Create a folder 'custom' in path /web/themes/custom
+3. Open gitbash and run the commands:
+```
+export CUSTOM_BARRIO=custom_subtheme_name
+cp -r ../contrib/bootstrap_barrio/subtheme $CUSTOM_BARRIO
+cd $CUSTOM_BARRIO or run cd custom_subtheme_name
+```
+4. Now ensure all files have the prefix `custom_subtheme_name`
+5. In the `.info.yml` file ensure compatibility by changing `core: ...` to
+```
+#core:...
+core_version_requirement: ^10 || ^11 //or the latest compatible versions.
+```
+6. In the `.theme` file makes changes to the prefixes:
+```
+function custom_subtheme_name_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+   $form['components']['navbar']['custom_subtheme_name_navbar_top_background']['#options'] = [
+   .....
+   $form['components']['navbar']['custom_subtheme_name_navbar_background']['#options'] = [
+}
+
+```
