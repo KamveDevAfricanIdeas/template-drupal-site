@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - bootstrap_barrio_subtheme
-id: bootstrap_barrio_subtheme_messages
-theme: bootstrap_barrio_subtheme
+    - khula_theme
+id: khula_theme_messages
+theme: khula_theme
 region: highlighted
 weight: -6
 provider: null

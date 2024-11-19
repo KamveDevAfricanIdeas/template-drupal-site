@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - bootstrap_barrio_subtheme
-id: bootstrap_barrio_subtheme_powered
-theme: bootstrap_barrio_subtheme
+    - khula_theme
+id: khula_theme_powered
+theme: khula_theme
 region: footer_fifth
 weight: -7
 provider: null

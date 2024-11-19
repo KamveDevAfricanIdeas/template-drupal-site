@@ -4,9 +4,9 @@ dependencies:
   module:
     - search
   theme:
-    - bootstrap_barrio_subtheme
-id: bootstrap_barrio_subtheme_search_form_wide
-theme: bootstrap_barrio_subtheme
+    - khula_theme
+id: khula_theme_search_form_wide
+theme: khula_theme
 region: top_header_form
 weight: -7
 provider: null

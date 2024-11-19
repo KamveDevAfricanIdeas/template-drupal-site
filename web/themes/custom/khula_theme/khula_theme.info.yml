@@ -1,13 +1,13 @@
-name: Bootstrap Barrio Subtheme
+name: Khula Municipality Theme
 type: theme
-description: 'Basic structure for a Bootstrap Barrio SubTheme.'
+description: 'Basic structure for a Khula Municipality SubTheme.'
 core: 8.x
 core_version_requirement: ^8 || ^9 || ^10
 base theme: bootstrap_barrio
 
 libraries:
-  - bootstrap_barrio_subtheme/bootstrap_cdn
-  - bootstrap_barrio_subtheme/global-styling
+  - khula_theme/bootstrap_cdn
+  - khula_theme/global-styling
 
 regions:
   top_header: 'Top header'

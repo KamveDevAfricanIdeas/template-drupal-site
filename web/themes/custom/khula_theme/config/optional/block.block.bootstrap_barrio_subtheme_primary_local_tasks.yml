@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - bootstrap_barrio_subtheme
-id: bootstrap_barrio_subtheme_primary_local_tasks
-theme: bootstrap_barrio_subtheme
+    - khula_theme
+id: khula_theme_primary_local_tasks
+theme: khula_theme
 region: content
 weight: -5
 provider: null

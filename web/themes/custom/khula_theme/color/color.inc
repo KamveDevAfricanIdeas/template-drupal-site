@@ -115,7 +115,7 @@ $info = [
   ],
 
   // Preview files.
-  'preview_library' => 'bootstrap_barrio_subtheme/color.preview',
+  'preview_library' => 'khula_theme/color.preview',
   'preview_html' => 'color/preview.html',
 
   // Attachments.
@@ -123,7 +123,7 @@ $info = [
     'drupalSettings' => [
       'color' => [
         // Put the logo path into JavaScript for the live preview.
-        'logo' => theme_get_setting('logo.url', 'bootstrap_barrio_subtheme'),
+        'logo' => theme_get_setting('logo.url', 'khula_theme'),
       ],
     ],
   ],

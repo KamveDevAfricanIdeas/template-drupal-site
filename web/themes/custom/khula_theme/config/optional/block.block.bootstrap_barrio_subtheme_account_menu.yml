@@ -6,9 +6,9 @@ dependencies:
   module:
     - system
   theme:
-    - bootstrap_barrio_subtheme
-id: bootstrap_barrio_subtheme_account_menu
-theme: bootstrap_barrio_subtheme
+    - khula_theme
+id: khula_theme_account_menu
+theme: khula_theme
 region: secondary_menu
 weight: -7
 provider: null

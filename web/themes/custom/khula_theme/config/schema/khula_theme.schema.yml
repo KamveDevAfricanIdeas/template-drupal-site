@@ -1,5 +1,5 @@
 # Schema for the configuration files of the Bootstrap Barrio Subtheme.
 
-bootstrap_barrio_subtheme.settings:
+khula_theme.settings:
   type: bootstrap_barrio.settings
   label: 'Bootstrap Barrio settings'
