@@ -3749,7 +3749,10 @@ textarea.form-control-lg {
   font-weight: var(--bs-nav-link-font-weight);
   color: var(--bs-nav-link-color);
   text-decoration: none;
-  background: none;
+  background-color: #192a56;
+  width: 100px;
+  border: solid 1px #dcdde1;
+  box-shadow: 1px 1px 1px 1px #718093;
   border: 0;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
@@ -3758,8 +3761,18 @@ textarea.form-control-lg {
     transition: none;
   }
 }
-.nav-link:hover, .nav-link:focus {
+.nav-link:hover{
+  font-size: 1em;
+  padding-left: 8px;
+  background-color: #353b48;
   color: var(--bs-nav-link-hover-color);
+}
+.nav-link:focus{
+  color: var(--bs-nav-link-hover-color);
+}
+.nav-link:active{
+  color: var(--bs-nav-link-hover-color);
+  background-color: #44bd32;
 }
 .nav-link:focus-visible {
   outline: 0;
@@ -4005,8 +4018,7 @@ textarea.form-control-lg {
     position: absolute;
   }
   .navbar-expand-sm .navbar-nav .nav-link {
-    padding-right: var(--bs-navbar-nav-link-padding-x);
-    padding-left: var(--bs-navbar-nav-link-padding-x);
+    
   }
   .navbar-expand-sm .navbar-nav-scroll {
     overflow: visible;
@@ -4098,9 +4110,7 @@ textarea.form-control-lg {
   .navbar-expand-lg .navbar-nav .dropdown-menu {
     position: absolute;
   }
-  .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: var(--bs-navbar-nav-link-padding-x);
-    padding-left: var(--bs-navbar-nav-link-padding-x);
+  .navbar-expand-lg .navbar-nav .nav-link {    
   }
   .navbar-expand-lg .navbar-nav-scroll {
     overflow: visible;
@@ -4146,8 +4156,6 @@ textarea.form-control-lg {
     position: absolute;
   }
   .navbar-expand-xl .navbar-nav .nav-link {
-    padding-right: var(--bs-navbar-nav-link-padding-x);
-    padding-left: var(--bs-navbar-nav-link-padding-x);
   }
   .navbar-expand-xl .navbar-nav-scroll {
     overflow: visible;
