@@ -2,6 +2,11 @@ global-styling:
   version: VERSION
   js:
     js/global.js: {}
+    js/custom.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - bootstrap_barrio/global
   css:
     component:
       css/style.css: {}

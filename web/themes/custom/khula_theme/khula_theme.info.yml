@@ -2,7 +2,7 @@ name: Khula Municipality Theme
 type: theme
 description: 'Basic structure for a Khula Municipality SubTheme.'
 core: 8.x
-core_version_requirement: ^8 || ^9 || ^10
+core_version_requirement: ^8 || ^9 || ^10 || ^11
 base theme: bootstrap_barrio
 
 libraries:
@@ -33,7 +33,7 @@ regions:
   footer_fourth: 'Footer fourth'
   footer_fifth: 'Footer fifth'
 
-# Information added by Drupal.org packaging script on 2024-09-09
-version: '5.5.17'
-project: 'bootstrap_barrio'
-datestamp: 1725856217
+# # Information added by Drupal.org packaging script on 2024-09-09
+# version: '5.5.17'
+# project: 'bootstrap_barrio'
+# datestamp: 1725856217

@@ -1,5 +1,3 @@
-{% extends "@bootstrap_barrio/layout/page.html.twig" %}
-
 {#
 /**
  * @file
@@ -62,6 +60,7 @@
  * - content_attributes: Items for the header region.
  * - sidebar_first_attributes: Items for the highlighted region.
  * - sidebar_second_attributes: Items for the primary menu region.
+ * - sidebar_collapse: If the sidebar_first will collapse.
  *
  * @see template_preprocess_page()
  * @see bootstrap_barrio_preprocess_page()
@@ -72,7 +71,11 @@
 {% set sidebar_first_exists = page.sidebar_first|render|striptags('<img><video><audio><drupal-render-placeholder>')|trim is not empty %}
 {% set sidebar_second_exists = page.sidebar_second|render|striptags('<img><video><audio><drupal-render-placeholder>')|trim is not empty %}
 
-{% block head %}
+<div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
+      {# -->TOP SECTION WITH HEADER AND NAVBAR HERE<-- #}
+      {% block head %}
         {% if page.secondary_menu or page.top_header or page.top_header_form %}
           <nav{{ navbar_top_attributes }}>
           {% if container_navbar %}
@@ -81,7 +84,7 @@
               {{ page.secondary_menu }}
               {{ page.top_header }}
               {% if page.top_header_form %}
-                <div class="form-inline navbar-form float-right">
+                <div class="form-inline navbar-form ms-auto">
                   {{ page.top_header_form }}
                 </div>
               {% endif %}
@@ -90,32 +93,52 @@
           {% endif %}
           </nav>
         {% endif %}
+
+        {# -->NAVBAR HERE<-- #}
+        {% if page.header or page.primary_menu or page.header_form %}
         <nav{{ navbar_attributes }}>
           {% if container_navbar %}
           <div class="container">
           {% endif %}
             {{ page.header }}
             {% if page.primary_menu or page.header_form %}
-              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-              <div class="collapse navbar-collapse" id="CollapsingNavbar">
+              <button class="navbar-toggler collapsed" type="button" data-bs-toggle="{{ navbar_collapse_btn_data }}" data-bs-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+              <div class="{{ navbar_collapse_class }}" id="CollapsingNavbar">
                 {{ page.primary_menu }}
                 {% if page.header_form %}
-                  <div class="form-inline navbar-form float-right">
+                  <div class="form-inline navbar-form justify-content-end">
                     {{ page.header_form }}
                   </div>
                 {% endif %}
-	          </div>
-            {% endif %}
-            {% if sidebar_collapse %}
-              <button class="navbar-toggler navbar-toggler-left collapsed" type="button" data-toggle="collapse" data-target="#CollapsingLeft" aria-controls="CollapsingLeft" aria-expanded="false" aria-label="Toggle navigation"></button>
+              </div>
             {% endif %}
           {% if container_navbar %}
           </div>
           {% endif %}
         </nav>
-{% endblock %}
+      {% endif %}
+      {% endblock %}
 
-{% block content %}
+    {# -->PAGE CONTENT HERE<-- #}
+    </header>
+    {% if page.highlighted %}
+      <div class="highlighted">
+        <aside class="{{ container }} section clearfix" role="complementary">
+          {{ page.highlighted }}
+        </aside>
+      </div>
+    {% endif %}
+    {% if page.featured_top %}
+      {% block featured %}
+        <div class="featured-top">
+          <aside class="featured-top__inner section {{ container }} clearfix" role="complementary">
+            {{ page.featured_top }}
+          </aside>
+        </div>
+      {% endblock %}
+    {% endif %}
+    <div id="main-wrapper" class="layout-main-wrapper clearfix">
+      {% block content %}
         <div id="main" class="{{ container }}">
           {{ page.breadcrumb }}
           <div class="row row-offcanvas row-offcanvas-left clearfix">
@@ -141,22 +164,37 @@
             {% endif %}
           </div>
         </div>
-{% endblock %}
+      {% endblock %}
+    </div>
+    {% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}
+      <div class="featured-bottom">
+        <aside class="{{ container }} clearfix" role="complementary">
+          {{ page.featured_bottom_first }}
+          {{ page.featured_bottom_second }}
+          {{ page.featured_bottom_third }}
+        </aside>
+      </div>
+    {% endif %}
 
-{% block footer %}
-        <div class="{{ container }}">
-          {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
-            <div class="site-footer__top clearfix">
-              {{ page.footer_first }}
-              {{ page.footer_second }}
-              {{ page.footer_third }}
-              {{ page.footer_fourth }}
+    {# -->FOOTER HERE<-- #}
+    <footer class="site-footer bg-dark text-white py-4">
+      {% block footer %}
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h5>About Us</h5>
+              <p>Learn more about Khula Municipality and the Initiatives we are involved with.</p>
             </div>
-          {% endif %}
-          {% if page.footer_fifth %}
-            <div class="site-footer__bottom">
-              {{ page.footer_fifth }}
+            <div class="col-md-6 text-md-end">
+              <h5>Follow Us</h5>
+              <a href="#" class="btn btn-outline-light btn-sm me-2">Facebook</a>
+              <a href="#" class="btn btn-outline-light btn-sm me-2">Twitter</a>
+              <a href="#" class="btn btn-outline-light btn-sm">LinkedIn</a>
             </div>
-          {% endif %}
+          </div>
         </div>
-{% endblock %}
+      {% endblock %}
+    </footer>
+
+  </div>
+</div>
