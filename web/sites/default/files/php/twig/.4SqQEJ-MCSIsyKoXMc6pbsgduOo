@@ -1,0 +1,153 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+use Twig\TemplateWrapper;
+
+/* bootstrap_barrio:container */
+class __TwigTemplate_8f5aec9ea1212b20d36c83fd07d06dbf extends Template
+{
+    private Source $source;
+    /**
+     * @var array<string, Template>
+     */
+    private array $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->parent = false;
+
+        $this->blocks = [
+            'content' => [$this, 'block_content'],
+        ];
+        $this->sandbox = $this->extensions[SandboxExtension::class];
+        $this->checkSecurity();
+    }
+
+    protected function doDisplay(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        // line 1
+        yield $this->extensions['Drupal\Core\Template\TwigExtension']->renderVar($this->extensions['Drupal\Core\Template\TwigExtension']->attachLibrary("core/components.bootstrap_barrio--container"));
+        yield $this->extensions['Drupal\Core\Template\TwigExtension']->renderVar($this->extensions['Drupal\Core\Template\ComponentsTwigExtension']->addAdditionalContext($context, "bootstrap_barrio:container"));
+        yield $this->extensions['Drupal\Core\Template\TwigExtension']->renderVar($this->extensions['Drupal\Core\Template\ComponentsTwigExtension']->validateProps($context, "bootstrap_barrio:container"));
+        $context["classes"] = ((($context["full_width"] ?? null)) ? ("full-width") : (((($context["container"] ?? null)) ? ("container") : (""))));
+        // line 2
+        yield "
+";
+        // line 3
+        $context["style"] = ((($context["background_image"] ?? null)) ? ((("background-image:url(\"" . $this->sandbox->ensureToStringAllowed(($context["background_image"] ?? null), 3, $this->source)) . "\");")) : (""));
+        // line 4
+        $context["style"] = ((($context["background_color"] ?? null)) ? (((($this->sandbox->ensureToStringAllowed(($context["style"] ?? null), 4, $this->source) . "background-color:") . $this->sandbox->ensureToStringAllowed(($context["background_color"] ?? null), 4, $this->source)) . "\");")) : (($context["style"] ?? null)));
+        // line 5
+        yield "
+<section ";
+        // line 6
+        yield $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, $this->sandbox->ensureToStringAllowed(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, ($context["attributes"] ?? null), "addClass", [($context["classes"] ?? null)], "method", false, false, true, 6), "setAttribute", ["style", ($context["style"] ?? null)], "method", false, false, true, 6), 6, $this->source), "html", null, true);
+        yield ">
+  ";
+        // line 7
+        if ((($context["full_width"] ?? null) && ($context["container"] ?? null))) {
+            // line 8
+            yield "    <div class=\"container\">
+  ";
+        }
+        // line 10
+        yield "    ";
+        yield from $this->unwrap()->yieldBlock('content', $context, $blocks);
+        // line 11
+        yield "  ";
+        if ((($context["full_width"] ?? null) && ($context["container"] ?? null))) {
+            // line 12
+            yield "    </div>
+  ";
+        }
+        // line 14
+        yield "</section>
+";
+        $this->env->getExtension('\Drupal\Core\Template\TwigExtension')
+            ->checkDeprecations($context, ["full_width", "container", "background_image", "background_color", "attributes"]);        yield from [];
+    }
+
+    // line 10
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_content(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        yield from [];
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getTemplateName(): string
+    {
+        return "bootstrap_barrio:container";
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function isTraitable(): bool
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getDebugInfo(): array
+    {
+        return array (  87 => 10,  80 => 14,  76 => 12,  73 => 11,  70 => 10,  66 => 8,  64 => 7,  60 => 6,  57 => 5,  55 => 4,  53 => 3,  50 => 2,  45 => 1,);
+    }
+
+    public function getSourceContext(): Source
+    {
+        return new Source("", "bootstrap_barrio:container", "C:\\xampp\\htdocs\\test_drupal_site\\web/themes/contrib/bootstrap_barrio\\components\\container\\container.twig");
+    }
+    
+    public function checkSecurity()
+    {
+        static $tags = array("set" => 1, "if" => 7, "block" => 10);
+        static $filters = array("escape" => 6);
+        static $functions = array();
+
+        try {
+            $this->sandbox->checkSecurity(
+                ['set', 'if', 'block'],
+                ['escape'],
+                [],
+                $this->source
+            );
+        } catch (SecurityError $e) {
+            $e->setSourceContext($this->source);
+
+            if ($e instanceof SecurityNotAllowedTagError && isset($tags[$e->getTagName()])) {
+                $e->setTemplateLine($tags[$e->getTagName()]);
+            } elseif ($e instanceof SecurityNotAllowedFilterError && isset($filters[$e->getFilterName()])) {
+                $e->setTemplateLine($filters[$e->getFilterName()]);
+            } elseif ($e instanceof SecurityNotAllowedFunctionError && isset($functions[$e->getFunctionName()])) {
+                $e->setTemplateLine($functions[$e->getFunctionName()]);
+            }
+
+            throw $e;
+        }
+
+    }
+}
