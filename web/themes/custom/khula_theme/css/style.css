@@ -195,6 +195,7 @@
 
 body {
   margin: 0;
+  /* text-align: center; */
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
@@ -223,7 +224,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 }
 
 h1, .h1 {
-  font-size: calc(1.375rem + 1.5vw);
+  font-size: calc(1.375rem + 1.2vw);
 }
 @media (min-width: 1200px) {
   h1, .h1 {
@@ -347,8 +348,8 @@ sup {
 }
 
 a {
-  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
-  text-decoration: underline;
+  color: white;
+  text-decoration: none;
 }
 a:hover {
   --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
@@ -3339,15 +3340,15 @@ textarea.form-control-lg {
 
 .dropdown-menu {
   --bs-dropdown-zindex: 1000;
-  --bs-dropdown-min-width: 10rem;
-  --bs-dropdown-padding-x: 0;
-  --bs-dropdown-padding-y: 0.5rem;
+  --bs-dropdown-min-width: 6rem;
+  --bs-dropdown-padding-x: 0.2rem;
+  --bs-dropdown-padding-y: 0.2rem;
   --bs-dropdown-spacer: 0.125rem;
   --bs-dropdown-font-size: 1rem;
   --bs-dropdown-color: var(--bs-body-color);
   --bs-dropdown-bg: var(--bs-body-bg);
   --bs-dropdown-border-color: var(--bs-border-color-translucent);
-  --bs-dropdown-border-radius: var(--bs-border-radius);
+  --bs-dropdown-border-radius: 0;
   --bs-dropdown-border-width: var(--bs-border-width);
   --bs-dropdown-inner-border-radius: calc(var(--bs-border-radius) - var(--bs-border-width));
   --bs-dropdown-divider-bg: var(--bs-border-color-translucent);
@@ -3359,8 +3360,8 @@ textarea.form-control-lg {
   --bs-dropdown-link-active-color: #fff;
   --bs-dropdown-link-active-bg: #0d6efd;
   --bs-dropdown-link-disabled-color: var(--bs-tertiary-color);
-  --bs-dropdown-item-padding-x: 1rem;
-  --bs-dropdown-item-padding-y: 0.25rem;
+  --bs-dropdown-item-padding-x: 0.5rem;
+  --bs-dropdown-item-padding-y: 0rem;
   --bs-dropdown-header-color: #6c757d;
   --bs-dropdown-header-padding-x: 1rem;
   --bs-dropdown-header-padding-y: 0.5rem;
@@ -3370,11 +3371,12 @@ textarea.form-control-lg {
   min-width: var(--bs-dropdown-min-width);
   padding: var(--bs-dropdown-padding-y) var(--bs-dropdown-padding-x);
   margin: 0;
+  text-decoration: none;
   font-size: var(--bs-dropdown-font-size);
-  color: var(--bs-dropdown-color);
+  color: black;
   text-align: left;
   list-style: none;
-  background-color: var(--bs-dropdown-bg);
+  background-color: #353b48;
   background-clip: padding-box;
   border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
   border-radius: var(--bs-dropdown-border-radius);
@@ -3567,24 +3569,20 @@ textarea.form-control-lg {
 
 .dropdown-item {
   display: block;
-  //width: 100%;
-  padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+  /* padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x); */
   clear: both;
   font-weight: 400;
   color: var(--bs-dropdown-link-color);
   text-align: inherit;
   text-decoration: none;
-  white-space: nowrap;
-  background-color: #192a56;
-  width: 100px;
-  border: solid 1px #dcdde1;
-  box-shadow: 1px 1px 1px 1px #718093;
+  /* white-space: nowrap; */
+  /* background-color: #192a56; */
+  height: 100%;
+  width: 100%;
   border: 0;
-  border-radius: var(--bs-dropdown-item-border-radius, 0);
 }
 .dropdown-item:hover, .dropdown-item:focus {
   color: var(--bs-dropdown-link-hover-color);
-  background-color: var(--bs-dropdown-link-hover-bg);
 }
 .dropdown-item.active, .dropdown-item:active {
   color: var(--bs-dropdown-link-active-color);
@@ -3752,10 +3750,8 @@ textarea.form-control-lg {
   font-weight: var(--bs-nav-link-font-weight);
   color: var(--bs-nav-link-color);
   text-decoration: none;
-  background-color: #192a56;
+  /* #192a56 ... #718093*/
   width: 100px;
-  border: solid 1px #dcdde1;
-  box-shadow: 1px 1px 1px 1px #718093;
   border: 0;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
@@ -11856,7 +11852,11 @@ textarea.form-control-lg {
   }
 }
 body {
+  text-align: center;
   background-color: #f8f9fa;
 }
-
+/* STYLES FOR SMARTDATE CALENDAR */
+.fc-toolbar-title{
+  font-size: 0.5em;
+}
 /*# sourceMappingURL=style.css.map */
