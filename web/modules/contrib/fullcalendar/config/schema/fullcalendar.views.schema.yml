@@ -1,0 +1,397 @@
+# Schema for the views plugins of the Fullcalendar view module.
+
+views.style.fullcalendar:
+  type: views_style
+  label: 'FullCalendar display'
+  mapping:
+    header:
+      type: string
+      label: 'Header toolbar definition'
+    footer:
+      type: string
+      label: 'Footer toolbar definition'
+    titleFormat:
+      type: string
+      label: 'Formatting string for the title'
+    titleRangeSeparator:
+      type: string
+      label: 'Character to use in ranges for the title'
+    buttonText:
+      type: string
+      label: 'Labels to use on the buttons'
+    buttonIcons:
+      type: string
+      label: 'Icons to use on the buttons'
+    month_view:
+      type: boolean
+      label: 'Month View - enable'
+    timegrid_view:
+      type: boolean
+      label: 'TimeGrid View - enable'
+    daygrid_view:
+      type: boolean
+      label: 'DayGrid View - enable'
+    list_view:
+      type: boolean
+      label: 'List view - enable'
+    fields:
+      type: mapping
+      label: 'Fields to use as sources'
+      mapping:
+        title:
+          type: boolean
+          label: 'Title'
+        title_field:
+          type: string
+          label: 'Field to use as source for the title'
+        url:
+          type: boolean
+          label: 'URL'
+        url_field:
+          type: string
+          label: 'Field to use as source for the URL'
+        date:
+          type: boolean
+          label: 'Date'
+        date_field:
+          type: sequence
+          label: 'Field(s) to use as source for the Date'
+          sequence:
+            type: string
+            label: 'Date field id'
+    event_format:
+      type: mapping
+      label: 'Default formatting for event display'
+      mapping:
+        eventColor:
+          type: string
+          label: 'Hex string for the color to use'
+        eventDisplay:
+          type: string
+          label: 'Rendering style preset code'
+        displayEventTime:
+          type: boolean
+          label: 'Show or hide the default time display'
+        nextDayThreshold:
+          type: string
+          label: 'Time threshold for when an event should cross into the next day'
+    links:
+      type: mapping
+      label: 'Interactive options'
+      mapping:
+        navLinks:
+          type: boolean
+          label: 'Enable linking days to the day view'
+        navLinkDayClick:
+          type: string
+          label: 'Function to use as day view click handler'
+        navLinkWeekClick:
+          type: string
+          label: 'Function to use as week view click handler'
+        bundle_type:
+          type: string
+          label: 'Bundle to use for creating new events via day double-click'
+        formMode:
+          type: string
+          label: 'Which form mode to use for event creation'
+        createTarget:
+          type: string
+          label: 'How to open the form to create events'
+        modalWidth:
+          type: integer
+          label: 'If using a modal, how wide it should be'
+        updateConfirm:
+          type: boolean
+          label: 'Require confirmation before performing drag-and-drop updates'
+        showMessages:
+          type: boolean
+          label: 'Display toast-style messages that inform success or failure'
+    colors:
+      type: mapping
+      label: 'Fields to use as sources'
+      mapping:
+        color_bundle:
+          type: sequence
+          label: 'Color to use for each bundle'
+          sequence:
+            type: mapping
+            label: 'Per Bundle options'
+            mapping:
+              color:
+                type: string
+                label: 'Bundle color'
+              textcolor:
+                type: string
+                label: 'Bundle text color'
+              style:
+                type: string
+                label: 'Bundle style'
+        tax_field:
+          type: string
+          label: 'Field to use as source taxonomy reference'
+        vocabularies:
+          type: string
+          label: 'Vocabulary to use as source of terms'
+        color_taxonomies:
+          type: sequence
+          label: 'Display options for each term'
+          sequence:
+            type: mapping
+            label: 'Per Term options'
+            mapping:
+              color:
+                type: string
+                label: 'Term color'
+              textColor:
+                type: string
+                label: 'Term text color'
+              display:
+                type: string
+                label: 'Term display style'
+    month_view_settings:
+      type: mapping
+      label: 'Month View settings'
+      mapping:
+        fixedWeekCount:
+          type: boolean
+          label: 'Always show six weeks in a month'
+        showNonCurrentDates:
+          type: string
+          label: 'Display dates outside the current month'
+    timegrid_view_settings:
+      type: mapping
+      label: 'TimeGrid View settings'
+      mapping:
+        allDaySlot:
+          type: boolean
+          label: 'Display a slot for all day events'
+        allDayContent:
+          type: string
+          label: 'Text to display as header for the all day slot'
+        slotEventOverlap:
+          type: boolean
+          label: 'Events can overlap'
+        timeGridEventMinHeight:
+          type: string
+          label: 'Minimum pixel height events will be shown'
+    list_view_settings:
+      type: mapping
+      label: 'List View settings'
+      mapping:
+        listDayFormat:
+          type: string
+          label: 'Format to use for dates on the left side'
+        listDayAltFormat:
+          type: string
+          label: 'Format to use for dates on the right side'
+        noEventsMessage:
+          type: string
+          label: 'Message shown if no events are available'
+    views_year:
+      type: mapping
+      label: 'Options for the Year View'
+      mapping:
+        listYear_buttonText:
+          type: string
+          label: 'Text that will be displayed on buttons of the header/footer'
+        listYear_titleFormat:
+          type: string
+          label: 'Text that will be displayed in the title'
+    views_month:
+      type: mapping
+      label: 'Options for the Month View'
+      mapping:
+        listMonth_buttonText:
+          type: string
+          label: 'Text that will be displayed on buttons of the header/footer'
+        listMonth_titleFormat:
+          type: string
+          label: 'Text that will be displayed in the title'
+        dayGridMonth_buttonText:
+          type: string
+          label: 'Text that will be displayed on buttons of the header/footer'
+        dayGridMonth_titleFormat:
+          type: string
+          label: 'Text that will be displayed in the title'
+        dayGridMonth_dayHeaderFormat:
+          type: string
+          label: 'Text that will be displayed the column headings'
+    views_week:
+      type: mapping
+      label: 'Options for the Week View'
+      mapping:
+        listWeek_buttonText:
+          type: string
+          label: 'Text that will be displayed on buttons of the header/footer'
+        listWeek_titleFormat:
+          type: string
+          label: 'Text that will be displayed in the title'
+        dayGridWeek_buttonText:
+          type: string
+          label: 'Text that will be displayed on buttons of the header/footer'
+        dayGridWeek_titleFormat:
+          type: string
+          label: 'Text that will be displayed in the title'
+        dayGridWeek_dayHeaderFormat:
+          type: string
+          label: 'Text that will be displayed the column headings'
+        timeGridWeek_buttonText:
+          type: string
+          label: 'Text that will be displayed on buttons of the header/footer'
+        timeGridWeek_titleFormat:
+          type: string
+          label: 'Text that will be displayed in the title'
+        timeGridWeek_dayHeaderFormat:
+          type: string
+          label: 'Text that will be displayed the column headings'
+    views_day:
+      type: mapping
+      label: 'Options for the Day View'
+      mapping:
+        listDay_buttonText:
+          type: string
+          label: 'Text that will be displayed on buttons of the header/footer'
+        listDay_titleFormat:
+          type: string
+          label: 'Text that will be displayed in the title'
+        dayGridDay_buttonText:
+          type: string
+          label: 'Text that will be displayed on buttons of the header/footer'
+        dayGridDay_titleFormat:
+          type: string
+          label: 'Text that will be displayed in the title'
+        dayGridDay_dayHeaderFormat:
+          type: string
+          label: 'Text that will be displayed the column headings'
+        timeGridDay_buttonText:
+          type: string
+          label: 'Text that will be displayed on buttons of the header/footer'
+        timeGridDay_titleFormat:
+          type: string
+          label: 'Text that will be displayed in the title'
+        timeGridDay_dayHeaderFormat:
+          type: string
+          label: 'Text that will be displayed the column headings'
+    display:
+      type: mapping
+      label: 'Defaults for the overall display'
+      mapping:
+        initialView:
+          type: string
+          label: 'Which view should be shown to start'
+        listDay_titleFormat:
+          type: string
+          firstDay: 'What day to use as start of the week'
+    times:
+      type: mapping
+      label: 'Date & time display settings'
+      mapping:
+        convert_timezones:
+          type: boolean
+          label: 'Convert events in other timezones'
+        weekends:
+          type: boolean
+          label: 'Whether to display weekend days'
+        hiddenDays:
+          type: string
+          label: 'Which days to consider the weekend'
+        dayHeaders:
+          type: string
+          firstDay: 'Whether to list the days as column headers'
+    axis:
+      type: mapping
+      label: 'Time-axis settings'
+      mapping:
+        slotDuration:
+          type: string
+          label: 'Duration of time slots, defaults to 00:30:00'
+        slotLabelInterval:
+          type: string
+          label: 'Frequency that the time slots should be labelled with text'
+        slotLabelFormat:
+          type: string
+          firstDay: 'Text that will be displayed within a time slot'
+        slotMinTime:
+          type: string
+          label: 'First time slot that will be displayed for each day'
+        slotMaxTime:
+          type: string
+          label: 'Last time slot that will be displayed for each day'
+        scrollTime:
+          type: string
+          firstDay: 'How far forward the scroll pane is initially scrolled'
+    nav:
+      type: mapping
+      label: 'Date navigation'
+      mapping:
+        initialDate:
+          type: string
+          label: 'Initial date displayed when the calendar first loads'
+        validRange:
+          type: string
+          label: 'Which dates the user can navigate to and where events can go'
+    week:
+      type: mapping
+      label: 'Week numbers'
+      mapping:
+        weekNumbers:
+          type: boolean
+          label: 'If week numbers should be displayed on the calendar'
+        weekNumberCalculation:
+          type: string
+          label: 'Method for calculating week numbers that are displayed'
+        weekText:
+          type: string
+          label: 'Heading text for week numbers'
+    now:
+      type: mapping
+      label: 'Now indicator settings'
+      mapping:
+        nowIndicator:
+          type: boolean
+          label: 'If a marker indicating the current time should be shown'
+        now:
+          type: boolean
+          label: 'Explicitly sets the "today" date of the calendar'
+    business:
+      type: mapping
+      label: 'Business hours settings'
+      mapping:
+        businessHours:
+          type: boolean
+          label: 'Emphasize certain time slots on the calendar'
+        businessHours2:
+          type: string
+          label: 'Key:value pairs to set business hours'
+    style:
+      type: mapping
+      label: 'Calendar Appearance/Sizing'
+      mapping:
+        themeSystem:
+          type: string
+          label: 'Theme to use for display'
+        height:
+          type: string
+          label: 'Height of the entire calendar, including header and footer'
+        contentHeight:
+          type: string
+          label: 'Height of the view area of the calendar'
+        aspectRatio:
+          type: string
+          label: 'Width-to-height aspect ratio of the calendar'
+        handleWindowResize:
+          type: boolean
+          label: 'Resize the calendar when the browser window resizes'
+        windowResizeDelay:
+          type: string
+          label: 'time to wait to adjust size after a window resize occurs'
+    google:
+      type: mapping
+      label: 'Google Calendar API settings'
+      mapping:
+        googleCalendarApiKey:
+          type: string
+          label: 'API key from google Calendar'
+        googleCalendarId:
+          type: string
+          label: 'Comma-separated Google Calendar IDs'

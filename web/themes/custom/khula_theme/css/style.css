@@ -3567,7 +3567,7 @@ textarea.form-control-lg {
 
 .dropdown-item {
   display: block;
-  width: 100%;
+  //width: 100%;
   padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
   clear: both;
   font-weight: 400;
@@ -3575,7 +3575,10 @@ textarea.form-control-lg {
   text-align: inherit;
   text-decoration: none;
   white-space: nowrap;
-  background-color: transparent;
+  background-color: #192a56;
+  width: 100px;
+  border: solid 1px #dcdde1;
+  box-shadow: 1px 1px 1px 1px #718093;
   border: 0;
   border-radius: var(--bs-dropdown-item-border-radius, 0);
 }

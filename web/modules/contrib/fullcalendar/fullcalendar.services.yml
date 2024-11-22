@@ -1,0 +1,4 @@
+services:
+  plugin.manager.fullcalendar:
+    class: Drupal\fullcalendar\Plugin\FullcalendarManager
+    parent: default_plugin_manager

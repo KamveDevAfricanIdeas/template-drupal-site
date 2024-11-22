@@ -1,0 +1,76 @@
+drupal.fullcalendar:
+  js:
+    assets/js/fullcalendar.views.js: { }
+  css:
+    theme:
+      assets/css/fullcalendar.theme.css: {}
+  dependencies:
+    - fullcalendar/fullcalendar
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.dialog.ajax
+    - core/once
+drupal.fullcalendar.admin:
+  css:
+    theme:
+      assets/css/fullcalendar.admin.css: {}
+
+fullcalendar:
+  js:
+    /libraries/fullcalendar_io/dist/index.global.min.js: {}
+
+fullcalendar.locales:
+  js:
+    /libraries/fullcalendar_io/packages/core/locales-all.global.min.js: {}
+
+fullcalendar.bootstrap4:
+  js:
+    /libraries/fullcalendar_io/packages/bootstrap4/index.global.min.js: {}
+  css:
+    theme:
+      https://use.fontawesome.com/releases/v5.0.6/css/all.css: { type: external, minified: false}
+      https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css: { type: external, minified: true}
+fullcalendar.bootstrap5:
+  js:
+    /libraries/fullcalendar_io/packages/bootstrap5/index.global.min.js: {}
+fullcalendar.googlecalendar:
+  js:
+    /libraries/fullcalendar_io/packages/google-calendar/index.global.min.js: {}
+  dependencies:
+    - fullcalendar/fullcalendar
+fullcalendar.icalendar:
+  js:
+    /libraries/fullcalendar_io/packages/icalendar/index.global.min.js: {}
+  dependencies:
+    - fullcalendar/fullcalendar
+fullcalendar.luxon1:
+  js:
+    /libraries/fullcalendar_io/packages/luxon1/index.global.min.js: {}
+  dependencies:
+    - fullcalendar/fullcalendar
+fullcalendar.luxon2:
+  js:
+    /libraries/fullcalendar_io/packages/luxon2/index.global.min.js: {}
+  dependencies:
+    - fullcalendar/fullcalendar
+fullcalendar.luxon3:
+  js:
+    /libraries/fullcalendar_io/packages/luxon3/index.global.min.js: {}
+  dependencies:
+    - fullcalendar/fullcalendar
+fullcalendar.moment:
+  js:
+    /libraries/fullcalendar_io/packages/moment/index.global.min.js: {}
+    /libraries/fullcalendar_io/packages/moment-timezone/index.global.min.js: {}
+  dependencies:
+    - fullcalendar/fullcalendar
+fullcalendar.rrule:
+  js:
+    /libraries/fullcalendar_io/packages/rrule/index.global.min.js: {}
+  dependencies:
+    - fullcalendar/fullcalendar
+fullcalendar.webcomponent:
+  js:
+    /libraries/fullcalendar_io/packages/webcomponent/index.global.min.js: {}
+  dependencies:
+    - fullcalendar/fullcalendar

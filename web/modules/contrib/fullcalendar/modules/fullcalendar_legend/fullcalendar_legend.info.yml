@@ -1,0 +1,13 @@
+name: FullCalendar Legend
+type: module
+description: Explain the colors a FullCalendar display in a views attachment.
+core_version_requirement: ^10 || ^11
+package: FullCalendar
+dependencies:
+  - fullcalendar:fullcalendar
+  - drupal:block
+
+# Information added by Drupal.org packaging script on 2024-11-17
+version: '3.0.1'
+project: 'fullcalendar'
+datestamp: 1731862337

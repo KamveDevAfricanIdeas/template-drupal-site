@@ -1,0 +1,4 @@
+fullcalendar_legend:
+  css:
+    theme:
+      css/fullcalendar_legend.theme.css: {}

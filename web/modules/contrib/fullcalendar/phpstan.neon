@@ -1,0 +1,7 @@
+parameters:
+  level: 6
+  ignoreErrors:
+    - identifier: missingType.iterableValue
+  stubFiles:
+    - './tests/phpstan/stubs/FormStateInterface.stub'
+    - './tests/phpstan/stubs/ViewsPluginInterface.stub'

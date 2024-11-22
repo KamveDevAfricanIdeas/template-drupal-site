@@ -1,0 +1,23 @@
+fullcalendar.update:
+  path: '/fullcalendar/ajax/update/drop/{entity_type}/{entity}'
+  defaults:
+    _controller: '\Drupal\fullcalendar\Controller\UpdateController::drop'
+  requirements:
+    # _access_fullcalendar_update: 'TRUE'
+    _permission: 'access content'
+    _format: json
+  options:
+    parameters:
+      entity:
+        type: entity:{entity_type}
+
+fullcalendar.results:
+  path: '/fullcalendar/ajax/results/{view}/{display_id}'
+  defaults:
+    _controller: '\Drupal\fullcalendar\Controller\ResultsController::getResults'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      view:
+        type: entity:view

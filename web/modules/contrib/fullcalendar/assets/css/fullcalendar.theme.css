@@ -1,0 +1,111 @@
+/* stylelint-disable order/properties-order */
+/* Force contents to wrap */
+.fc-event {
+  word-wrap: break-word;
+}
+
+/* Undo Drupal default theme link colors */
+.fc-content a:link,
+.fc-content a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Styling for updated message */
+.fullcalendar-status {
+  display: none;
+  margin: 0 0 10px 0;
+  padding: 15px;
+  text-align: center;
+  color: #687;
+  border: 1px solid #fff;
+  background: #ecf8f4;
+}
+.fullcalendar-status-close {
+  text-transform: lowercase;
+}
+
+.fc table {
+  margin: 0;
+}
+
+table.fc-header {
+  margin-bottom: 10px;
+}
+
+.fc-header tr {
+  background-color: transparent;
+}
+
+.fc-header-title {
+  text-align: center;
+}
+
+.fc-header tbody,
+.fc-header th,
+.fc-header td {
+  border: 0;
+}
+
+.fc-header .fc-state-default,
+.fc-header .ui-state-default {
+  margin-bottom: 0;
+}
+
+/* Hide plain text events when javascript is enabled */
+.js .fullcalendar-content {
+  display: none;
+}
+
+/* Reposition the throbber. */
+.fullcalendar .ajax-progress {
+  position: absolute;
+  z-index: 1;
+  top: 1.6em;
+  left: 50%;
+}
+
+.fc {
+  margin-bottom: 2em;
+}
+
+/* Styling for messages */
+#fc-message {
+  opacity: 0;
+  min-width: 250px;
+  transform: translate(-50%, 0);
+  background-color: #0a2;
+  color: #fff;
+  text-align: center;
+  border-radius: 50vh;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#fc-message.show {
+  opacity: 1;
+  visibility: visible;
+  animation: fade-in-out 5s ease-in-out forwards;
+}
+
+#fc-message.error {
+  background-color: #900;
+}
+
+@keyframes fade-in-out {
+  0%,
+  100% {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  8%,
+  92% {
+    bottom: 30px;
+    opacity: 1;
+  }
+}

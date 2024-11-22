@@ -1,0 +1,14 @@
+.claro-details {
+  overflow: hidden;
+}
+
+.m-r-10 {
+  margin-right: 10px;
+}
+
+.fullcalendar--style-group {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  column-gap: 5%;
+}

@@ -1,0 +1,14 @@
+name: FullCalendar
+type: module
+description: Provides a views style plugin for FullCalendar
+core_version_requirement: ^10 || ^11
+package: FullCalendar
+configure: admin/config/user-interface/fullcalendar
+dependencies:
+  - drupal:views
+  - drupal:datetime
+
+# Information added by Drupal.org packaging script on 2024-11-17
+version: '3.0.1'
+project: 'fullcalendar'
+datestamp: 1731862337

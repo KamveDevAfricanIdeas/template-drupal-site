@@ -1,0 +1,3 @@
+update any fullcalendar event:
+  title: Update any FullCalendar event
+  description: Allow user to edit events, ignoring other permissions.

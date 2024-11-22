@@ -1,0 +1,114 @@
+<?php
+
+/**
+ * @file
+ * Provides a views style plugin for FullCalendar.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+use Drupal\views\Plugin\views\field\EntityField;
+
+/**
+ * The minimum supported version of the FullCalendar plugin.
+ */
+const FULLCALENDAR_MIN_PLUGIN_VERSION = '6.0.0';
+
+/**
+ * Implements hook_help().
+ */
+function fullcalendar_help(string $route_name, RouteMatchInterface $route_match): ?string {
+  if ($route_name === 'help.page.fullcalendar') {
+    $output = '';
+    $output .= '<h3>' . t('Fullcalendar') . '</h3>';
+    $output .= '<p>' . t('The Fullcalendar module is an integration of the <a href=":fullcalendar-uri">Adam Shaw\'s FullCalendar Javascript calendar</a> with Drupal.', [
+      ':fullcalendar-uri' => Url::fromUri('https://fullcalendar.io')->toString(),
+    ]) . '</p>';
+    return $output;
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function fullcalendar_theme(array $existing, string $type, string $theme, string $path): array {
+  return [
+    'views_view__fullcalendar' => [
+      'template' => 'views-view--fullcalendar',
+      'base hook' => 'view',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for views_ui_edit_display_form().
+ *
+ * Since we force the query to be distinct, reflect that in the UI.
+ */
+function fullcalendar_form_views_ui_edit_display_form_alter(array &$form, FormStateInterface $form_state, string $form_id): void {
+  $style = $form_state->get('view')
+    ->get('executable')->display_handler->getOption('style');
+  if ($style['type'] !== 'fullcalendar' || empty($form['options']['query']['options']['distinct'])) {
+    return;
+  }
+
+  $distinct = &$form['options']['query']['options']['distinct'];
+
+  if (!isset($distinct['#description'])) {
+    $distinct['#description'] = '';
+  }
+  else {
+    $distinct['#description'] .= '<br>';
+  }
+
+  $distinct['#disabled'] = TRUE;
+  $distinct['#description'] .= '<strong>' . t('FullCalendar requires that the query be distinct.') . '</strong>';
+}
+
+/**
+ * Determines if a given field is a date field.
+ *
+ * @param \Drupal\views\Plugin\views\field\EntityField $field
+ *   A Views field handler object.
+ *
+ * @return bool
+ *   Boolean, TRUE if the field is a date field, FALSE otherwise.
+ */
+function fullcalendar_field_is_date(EntityField $field): bool {
+  $entity_type = $field->definition['entity_type'];
+
+  if (empty($entity_type)) {
+    return FALSE;
+  }
+
+  /** @var \Drupal\Core\Entity\EntityFieldManagerInterface $field_manager */
+  $field_manager = \Drupal::service('entity_field.manager');
+
+  /** @var \Drupal\Core\Field\FieldStorageDefinitionInterface[] $field_storages */
+  $field_storages = $field_manager->getFieldStorageDefinitions($entity_type);
+
+  if (isset($field_storages[$field->definition['field_name']])) {
+    /** @var \Drupal\Core\Field\FieldStorageDefinitionInterface $field_storage */
+    $field_storage = $field_storages[$field->definition['field_name']];
+
+    return in_array($field_storage->getType(), [
+      'datetime',
+      'daterange',
+      'date_recur',
+      'smartdate',
+    ]);
+  }
+
+  return FALSE;
+}
+
+/**
+ * Implements hook_theme_suggestions_alter().
+ */
+function fullcalendar_theme_suggestions_alter(array &$suggestions, array $variables, string $hook): void {
+  if ($hook === 'views_view') {
+    $suggestions[] = "views_view__" . $variables['view']->style_plugin->getPluginId();
+  }
+}
