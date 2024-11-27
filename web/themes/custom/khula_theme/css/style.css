@@ -11853,7 +11853,7 @@ textarea.form-control-lg {
 }
 body {
   text-align: center;
-  background-color: #f8f9fa;
+  /* background-color: #f8f9fa; */
 }
 /* STYLES FOR SMARTDATE CALENDAR */
 .fc-toolbar-title{

@@ -1,0 +1,12 @@
+<?php 
+/** 
+* Implements hook_theme()
+*/
+function cs_footer_block_theme(){
+    return [
+        'footer_theme'=>[
+            'variable'=>['data' => NULL],
+            'template'=>'footer',// This should match the Twig template file name.
+        ],
+    ];
+}

@@ -96,7 +96,7 @@
 
         {# -->NAVBAR HERE<-- #}
         {% if page.header or page.primary_menu or page.header_form %}
-          <nav{{ navbar_attributes }} class="navbar navbar-expand-md navbar-light bg-light p-5">
+          <nav{{ navbar_attributes }} class="navbar navbar-expand-md navbar-light p-5">
             {% if container_navbar %}
               <div class="container">
             {% endif %}
@@ -181,38 +181,24 @@
         </aside>
       </div>
     {% endif %}
-
-    {# -->FOOTER HERE<-- #}
-    <section class="">
-      <!-- Footer -->
-      <footer class="text-center" style="color: #f5f6fa; background-color: #2f3640;">
-        <!-- Grid container -->
-        {% block footer %}
-        <div class="container p-4 pb-0">
-          <!-- Section: CTA -->
-          <section class="">
-            <p class="d-flex justify-content-center align-items-center">
-              <span class="me-3">Subscribe to stay up-to-date</span>
-              <button data-mdb-ripple-init type="button" class="btn btn-outline-light btn-rounded">
-                Subscribe
-              </button>
-            </p>
-          </section>
-          <!-- Section: CTA -->
+    <footer class="site-footer">
+      {% block footer %}
+        <div class="{{ container }}">
+          {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
+            <div class="site-footer__top clearfix">
+              {{ page.footer_first }}
+              {{ page.footer_second }}
+              {{ page.footer_third }}
+              {{ page.footer_fourth }}
+            </div>
+          {% endif %}
+          {% if page.footer_fifth %}
+            <div class="site-footer__bottom">
+              {{ page.footer_fifth }}
+            </div>
+          {% endif %}
         </div>
-        <!-- Grid container -->
-        {# USE DRUSH: ./vendor/bin/drush #}
-        <!-- Copyright -->
-        <div class="text-center p-3"
-              style="background-color: rgba(0, 0, 0, 0.2);">
-          © 2024 Copyright:
-          <a class="" style="color: #f5f6fa;" href="#">KhulaZA.gov</a>
-        </div>
-        {% endblock %}
-        <!-- Copyright -->
-      </footer>
-      <!-- Footer -->
-    </section>
-
+      {% endblock %}
+    </footer>
   </div>
 </div>
