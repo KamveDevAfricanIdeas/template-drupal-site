@@ -1,0 +1,9 @@
+slideshow_library:
+  version: 1.x
+  css:
+    theme:
+      css/slideshow.style.css: {}
+  js:
+    js/slideshow.js: {}
+  dependencies:
+    - core/jquery

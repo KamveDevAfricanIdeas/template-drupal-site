@@ -1,0 +1,12 @@
+<?php 
+/** 
+* Implements hook_theme()
+*/
+function img_slideshow_block_theme(){
+  return [
+    'slideshow_block'=>[
+      'variables'=>['custom_data' => NULL,],
+      'template'=>'img-slideshow',// This should match the Twig template file name.
+    ],
+  ];
+}

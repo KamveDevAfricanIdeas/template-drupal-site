@@ -4,8 +4,8 @@
 */
 function cs_footer_block_theme(){
     return [
-        'footer_theme'=>[
-            'variable'=>['data' => NULL],
+        'footer_block'=>[
+            'variables'=>['custom_data' => NULL,],
             'template'=>'footer',// This should match the Twig template file name.
         ],
     ];

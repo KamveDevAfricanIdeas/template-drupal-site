@@ -1,0 +1,8 @@
+name: 'Custom Slideshow'
+type: module
+description: 'Custom image slideshow, developed by Kamve.'
+core: 8.x //must match the Drupal the site version
+core_version_requirement: ^8 || ^9 || ^10 || ^11
+package: Custom
+dependencies:
+  - drupal:block
