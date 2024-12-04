@@ -1,7 +1,7 @@
 /* ---------- Color Module Styles ----------- */
 
 body {
-  color: #3b3b3b;
+  color: #093b66;
   background: #292929;
 }
 
@@ -20,39 +20,85 @@ body {
   background-color: #fff;
   border-bottom-color: #fff;
 }
+.kamve-colors-south-africa-palette{
+  /* PRIMARY */
+  color: #A64228; /*Warm Earthy Red: Inspired by the soil and traditional clay huts, symbolizing a connection to the land and heritage.*/
+  color: #FFB81C; /*Golden Yellow: Reflecting the warmth of the African sun and prosperity*/
+  color: #0B6623; /*Deep Green: Symbolizing growth, agriculture, and harmony with nature.*/
+  color: #8B3626; /*Deep Earth Red: A darker, richer version of earthy red, evoking strength and tradition.*/
+  color: #074E28; /*Dark Forest Green: Symbolizing resilience and connection to nature.*/
+  color: #003D73; /*Midnight Blue: A stable and professional tone, inspired by South African night skies.*/
+  /* SUPPORTING */
+  color: #D98324; /*Rich Amber: *A warm and inviting tone inspired by beadwork and traditional designs./
+  color: #005B96; /*Ocean Blue: Representing water, peace, and stability, and evoking South Africa's coastline.*/
+  color: #4E4E50; /*Charcoal Grey: A versatile neutral for text and subtle backgrounds.*/
+  color: #F9F5E9; /*Ivory Wh!te: A softer wh!te that pairs well with the warmer tones. */
+  color: #5A3E36; /*Warm Cocoa Brown: A soft, warm tone referencing wood and traditional crafts.*/
+  color: #2C2C2C; /*Charcoal Black: For bold text and high-contrast elements, creating a modern look.*/
+  color: #3F3F3F; /*Shadow Grey: A versatile shade for subtle depth in layouts or backgrounds.*/
+  /* ACCENTS */
+  color: #40B5AD; /*Turquoise: Inspired by traditional beadwork and the vibrant spirit of African design. */
+  color: #BF5700; /*Burnt Orange: A striking color reflecting sunsets and cultural vibrancy. */
+  color: #207D76; /*Deep Turquoise: A muted yet vibrant tone for accents and highlights.*/
+  color: #954F28; /*Burnt Sienna: A darker, earthy orange that feels sophisticated and natural. */
 
+  /* 
+    Suggested Use
+      Headers and Navigation: Use Deep Green or Ocean Blue for a calm and trustworthy impression.
+      Backgrounds: Ivory White or Charcoal Grey for a clean and professional look.
+      Buttons and CTAs: Golden Yellow or Burnt Orange to grab attention.
+      Accents and Highlights: Amber and Turquoise for a touch of warmth and cultural depth.
+    
+    Suggested Use of Darker Tones
+      Headers: Midnight Blue or Deep Earth Red for a bold, authoritative presence.
+      Backgrounds: Shadow Grey or Charcoal Black to provide depth and emphasize lighter text or elements.
+      Buttons and CTAs: Burnt Sienna or Deep Turquoise for striking but elegant attention-grabbers.
+      Subsections and Footers: Warm Cocoa Brown to add warmth and differentiation without overpowering.
+  */
+}
 #navbar-top {
-  background-color: #055a8e;
+  background-color: #003D73;
 }
 
 #navbar-main {
-  background-color: #1d84c3;
+  background-color: #ffffff;
 }
-
+#navbar-main .nav-link{
+  color: #093b66;
+}
+#navbar-main .nav-link:hover{
+  color: #F9F5E9;
+}
+.dropdown-item a{
+  color: #F9F5E9;
+}
+.breadcrumb a{
+  color: #D98324;
+}
 a,
 .link {
-  color: #0071b3;
+  color: #093b66;
 }
 
 a:hover,
 a:focus,
 .link:hover,
 .link:focus {
-  color: #018fe2;
+  color: #0071b3;
 }
 .nav-item .dropdown-item a.active {
-  color: white;
+  color: #0071b3;
 }
 .nav-link {
-  color: rgb(231, 231, 231);
+  color: #093b66;
 }
 .nav-link:hover,
 .nav-link:focus {
-  color: rgb(231, 231, 231);
+  color: #F9F5E9;
 }
 a:active,
 .link:active {
-  color: #23aeff;
+  color: #F9F5E9;
 }
 
 .page-item.active .page-link {
@@ -81,7 +127,7 @@ a:active,
 }
 
 .site-footer {
-  background: #292929;
+  background: #003D73;
 }
 
 .region-header,

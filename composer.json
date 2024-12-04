@@ -20,6 +20,7 @@
         "drupal/core-composer-scaffold": "^11.0",
         "drupal/core-project-message": "^11.0",
         "drupal/core-recommended": "^11.0",
+        "drupal/paragraphs": "^1.18",
         "drupal/slick": "^3.0",
         "drupal/slick_views": "^3.0",
         "drupal/smart_date": "^4.2",

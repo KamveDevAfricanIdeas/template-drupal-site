@@ -738,10 +738,10 @@ progress {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  /* padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: auto;
-  margin-left: auto;
+  margin-left: auto; */
 }
 
 @media (min-width: 576px) {
@@ -3583,11 +3583,12 @@ textarea.form-control-lg {
 }
 .dropdown-item:hover, .dropdown-item:focus {
   color: var(--bs-dropdown-link-hover-color);
+  background-color: #192a56;
 }
 .dropdown-item.active, .dropdown-item:active {
   color: var(--bs-dropdown-link-active-color);
+  background-color: #192a56;
   text-decoration: none;
-  background-color: var(--bs-dropdown-link-active-bg);
 }
 .dropdown-item.disabled, .dropdown-item:disabled {
   color: var(--bs-dropdown-link-disabled-color);
@@ -4128,7 +4129,7 @@ textarea.form-control-lg {
     width: auto !important;
     height: auto !important;
     visibility: visible !important;
-    background-color: transparent !important;
+    background-color: white;/* CHANGED COLOR FROM: transparent !important */
     border: 0 !important;
     transform: none !important;
     transition: none;
@@ -4633,12 +4634,22 @@ textarea.form-control-lg {
   --bs-breadcrumb-item-active-color: var(--bs-secondary-color);
   display: flex;
   flex-wrap: wrap;
-  padding: var(--bs-breadcrumb-padding-y) var(--bs-breadcrumb-padding-x);
+  //padding: var(--bs-breadcrumb-padding-y) var(--bs-breadcrumb-padding-x);
   margin-bottom: var(--bs-breadcrumb-margin-bottom);
   font-size: var(--bs-breadcrumb-font-size);
-  list-style: none;
-  background-color: var(--bs-breadcrumb-bg);
-  border-radius: var(--bs-breadcrumb-border-radius);
+  font-weight: bold;
+  //list-style: none;
+  //background-color: var(--bs-breadcrumb-bg);
+  //border-radius: var(--bs-breadcrumb-border-radius);
+  position: relative;
+  background: #074E28;
+  width: 100%;
+  border-radius: 15px;
+  margin: 0;
+  padding: 10px 8px;
+  z-index: 3;
+  -webkit-box-shadow: #207D76;
+  box-shadow: 1px 1px 1px 1px #207D76;
 }
 
 .breadcrumb-item + .breadcrumb-item {
@@ -4651,7 +4662,7 @@ textarea.form-control-lg {
   content: var(--bs-breadcrumb-divider, "/") /* rtl: var(--bs-breadcrumb-divider, "/") */;
 }
 .breadcrumb-item.active {
-  color: var(--bs-breadcrumb-item-active-color);
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .pagination {

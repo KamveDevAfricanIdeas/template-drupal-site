@@ -1,0 +1,2 @@
+/* @license GPL-2.0-or-later https://www.drupal.org/licensing/faq */
+.layout--fourcol-section{display:flex;flex-wrap:wrap;}.layout--fourcol-section > .layout__region{flex:0 1 100%;}@media screen and (min-width:40em){.layout--fourcol-section > .layout__region{flex:0 1 25%;}}
