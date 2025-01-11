@@ -19,7 +19,8 @@ This guide explains how to set up **Drupal** on **XAMPP** for Windows, move the 
 - [ ] Navigate to the project: `cd african_ideas_site`
 
 ## Step 2: Move this project to xampp/htdocs and Access Drupal Site
-> We can run the site at `http://localhost/african_ideas_site`
+> We can run the site at `http://localhost/african_ideas_site/web`
+> This allows us to access the interactive installer
 
 # Troubleshooting
 > Issues I've run into include (1) incompatibility with PHP and MySQL versions for XAMPP (2) Composer configurations
