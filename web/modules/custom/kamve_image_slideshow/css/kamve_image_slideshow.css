@@ -1,0 +1,13 @@
+.carousel-header{
+
+}
+.carousel-body{
+    padding: 50px;
+    color: rgb(2, 4, 22);
+    background-color: rgb(185, 179, 84);
+    border: solid 1px rgb(54, 14, 14);
+    text-align: center;
+}
+.carousel-banner-info{
+    color: rgb(241, 44, 44);
+}

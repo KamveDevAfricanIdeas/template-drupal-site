@@ -1,0 +1,10 @@
+image_carousel_library:
+  version: 1.x
+  css:
+    theme:
+      css/kamve_image_slideshow.css: {}
+      
+  js: {}
+    # js/kamve_image_slideshow.js: {}
+  # dependencies:
+  #   - core/jquery

@@ -884,5 +884,5 @@ $databases['default']['default'] = array (
   'autoload' => 'core/modules/mysql\\src\\Driver\\Database\\mysql\\',
 );
 $settings['config_sync_directory'] = 'sites/default/files/config_5AxlPCZcexMzoqXHlV7CrQiyDsUSRohCzUrhtPDTWhfX4Nmr6QV4ys_X-uyg5jErUFrQcWMbrQ/sync';
-ini_set('memory_limit', '128M');
+ini_set('memory_limit', '256M');
 set_time_limit(60);

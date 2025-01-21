@@ -1,0 +1,10 @@
+name: 'Kamve Image Carousel'
+type: module
+description: 'My custom image carousel'
+core: 8.x //must match the Drupal the site version
+core_version_requirement: ^8 || ^9 || ^10 || ^11
+package: Custom
+libraries:
+  - kamve_image_slideshow/image_carousel_library
+dependencies:
+  - drupal:block

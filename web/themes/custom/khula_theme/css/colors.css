@@ -79,6 +79,16 @@ a,
 .link {
   color: #093b66;
 }
+.content .field a {
+  background-color: #0071b3;
+  color: #F9F5E9;
+  border: solid 1px #F9F5E9;
+  border-radius: 15px;
+  padding: 5px;
+}
+.content .field a:hover{
+  background-color: #093b66;
+}
 
 a:hover,
 a:focus,

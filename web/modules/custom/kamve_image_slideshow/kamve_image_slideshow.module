@@ -1,0 +1,15 @@
+<?php 
+/** 
+* Implements image_carousel_hook()
+*/
+function kamve_image_slideshow_theme(){
+    return [
+        'image_carousel_hook'=>[
+            'variables'=>['custom_data' => NULL, 'custom_banner_info' => NULL],
+            'template'=>'carousel_template',// This should match the Twig template file name.
+        ],
+        'css_block' => [
+            'variables'=>[]
+        ],
+    ];
+}
